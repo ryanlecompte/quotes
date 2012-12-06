@@ -1,0 +1,17 @@
+*~
+project/boot/
+project/build/target/
+project/plugins/project/build.properties
+target/
+*.eml
+*.iml
+*.ipr
+*.iws
+.*.sw?
+.idea
+.DS_Store
+.target
+.settings
+.project
+.classpath
+.cache
