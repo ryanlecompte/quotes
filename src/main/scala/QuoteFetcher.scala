@@ -1,10 +1,8 @@
-import java.util.concurrent.Executors
-
 import scala.xml.XML
 
-import akka.actor.{Actor, ActorLogging, ActorRef, Terminated}
+import akka.actor.{Actor, ActorLogging, ActorRef}
 import akka.pattern.pipe
-import akka.dispatch.{ExecutionContext, Future}
+import akka.dispatch.Future
 
 /**
  * QuoteFetcher is responsible for fetching the price of a single quote

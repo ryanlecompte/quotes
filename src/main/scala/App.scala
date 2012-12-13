@@ -1,5 +1,5 @@
-import akka.actor.{ActorSystem, ActorRef, Props}
-import akka.pattern.{ask, pipe}
+import akka.actor.{ActorSystem, Props}
+import akka.pattern.ask
 import akka.util.duration._
 import akka.util.Timeout
 
