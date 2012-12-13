@@ -14,12 +14,12 @@ class QuoteRequestPartitioner(partitionSize: Int) extends
   // we could use something like Twitter's snowflake project to generate
   // unique identifiers without hitting the database or worrying about
   // running out of unique values.
-  var uniqueIdGenerator = 1L
+  private[this] var uniqueIdGenerator = 1L
   // Used to keep track of when we have successfully processed all partitions
   // for a particular actor.
-  var outstandingRequests = Map.empty[Long, List[Map[String, Double]]]
+  private[this] var outstandingRequests = Map.empty[Long, List[Map[String, Double]]]
   // Used to balance requests across multiple actors.
-  val quoteRouter = context.actorOf(Props[QuoteFetcher].
+  private[this] val quoteRouter = context.actorOf(Props[QuoteFetcher].
       withRouter(RoundRobinRouter(nrOfInstances = 5)))
 
   override def preStart() {
